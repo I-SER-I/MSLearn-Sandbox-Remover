@@ -1,0 +1,1 @@
+A simple extension for Microsoft Learn that removes the sandbox (.NET Editor) and centers the body text
