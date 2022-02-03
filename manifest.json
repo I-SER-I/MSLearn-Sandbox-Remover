@@ -1,22 +1,27 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "MicrosoftLearnSandboxRemover",
-  "version": "1.0.0.4",
+  "version": "1.0.1",
+  "description": "A simple extension for Microsoft Learn that removes the sandbox (.NET Editor) and centers the body text.",
   "icons": {
-    "128" : "icon.png"
+    "16": "/src/icon/R.png",
+    "48": "/src/icon/R.png",
+    "128": "/src/icon/R.png"
   },
-
   "content_scripts": [
     {
-      "matches": ["*://*/*"],
-      "js": [ "content.js"]
+      "matches": ["http://docs.microsoft.com/*"],
+      "css": [],
+      "js": ["/src/script/controller.js"]
     }
   ],
-
-  "browser_action": {
+  "action": {
+    "default_icon": {
+      "16": "/src/icon/R.png",
+      "24": "/src/icon/R.png",
+      "32": "/src/icon/R.png"
+    },
     "default_title": "MSLearnSandboxRemover",
-    "default_icon": "icon.png"
-  },
-  "web_accessible_resource": [],
-  "permissions": ["https://docs.microsoft.com/*"]
+    "default_popup": "/src/html/popup.html"
+  }
 }
